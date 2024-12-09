@@ -1,0 +1,19 @@
+websiteTexts:
+  cartcontent.delivery.title:
+    en-US: Delivery
+    sv-SE: Leverans
+  cartcontent.discounts.description:
+    en-US: '* Different discounts applied'
+    sv-SE: '* Olika rabatter applicerade'
+  cartcontent.discounts.title:
+    en-US: Discounts
+    sv-SE: Rabatter
+  cartcontent.empty:
+    en-US: Your cart is empty
+    sv-SE: Kundvagnen är tom
+  cartcontent.button.keepshopping:
+    en-US: Keep shopping
+    sv-SE: Forstsätt handla
+  cartcontent.fee.title:
+    en-US: Fees
+    sv-SE: Avgifter

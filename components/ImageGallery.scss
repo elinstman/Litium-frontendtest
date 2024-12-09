@@ -1,0 +1,35 @@
+.thumbs-gallery__thumbnail-image {
+  .swiper-slide-thumb-active img {
+    border: 2px solid #000;
+  }
+
+  swiper-slide {
+    height: fit-content;
+  }
+}
+
+.thumbs-gallery__main-image {
+  &:not(.lightbox) {
+    max-height: 548px;
+    overflow: hidden;
+  }
+
+  swiper-slide {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.horizontal-gallery {
+  &:not(.lightbox) {
+    display: block;
+    max-height: 457px;
+    overflow: hidden;
+  }
+
+  &.lightbox {
+    swiper-slide {
+      padding-bottom: 70px;
+    }
+  }
+}
