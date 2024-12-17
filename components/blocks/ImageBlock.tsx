@@ -1,27 +1,31 @@
+import { PointerMediaImageItem } from 'models/pointers';
+
 import { Block } from 'models/block';
 import { ContentFieldType } from 'models/content';
-import { PointerMediaImageItem } from 'models/pointers';
 import Image from 'next/image';
 import { getAbsoluteImageUrl } from 'services/imageService';
 
-export interface ImageBlockType {
+export interface ImageBlockType extends ContentFieldType {
   blockImagePointer?: PointerMediaImageItem;
+  text?: string;
+  _name?: string;
 }
 
-export interface ImageBlockField extends ContentFieldType {
+// export interface ImageBlockField extends ContentFieldType {
+//   blockImagePointer?: PointerMediaImageItem;
+//   text?: string;
+// }
+
+export interface ImageBlockProps extends Block {
   fields: ImageBlockType;
 }
 
-export interface ImageBlockProps extends Block {
-  fields: ImageBlockField;
-}
-
 export default function ImageBlock(props: ImageBlockProps) {
-  const { fields } = props.fields;
-  const { blockImagePointer } = fields;
-  console.log('props', blockImagePointer);
+  console.log('props in image block', props);
+  const { blockImagePointer } = props.fields || {};
+
   if (!blockImagePointer?.item?.url) {
-    return <div data-testId="imageBlock_empty">ingen bild tillgänglig</div>;
+    return <div data-testid="imageBlock_empty">ingen bild tillgänglig</div>;
   }
 
   return (

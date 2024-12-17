@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const IMAGE_FRAGMENT = gql`
-  fragment Image on ImageItem {
+  fragment Image on Image {
     dimension {
       height
       width
@@ -9,3 +9,4 @@ export const IMAGE_FRAGMENT = gql`
     url
   }
 `;
+

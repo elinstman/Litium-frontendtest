@@ -9,7 +9,7 @@ import 'server-only';
 import { HeaderKeys } from 'utils/constants';
 import { getHeadersLink, getHost } from 'utils/headers';
 import { createApolloClient } from './apollo-client';
-import { mutate, query, query as queryAction } from './dataService';
+import { mutate, query as queryAction } from './dataService';
 
 const { getClient } = registerApolloClient(() => {
   return createApolloClient({ links: [getHeadersLink()] });
@@ -36,8 +36,10 @@ export async function queryServer(options: {
   variables?: any;
   fetchPolicy?: FetchPolicy;
 }) {
+
+
   const { url, variables, fetchPolicy } = options;
-  console.log("query", query, url, variables)
+  console.log('options', JSON.stringify(options));
   return await queryAction({
     client: options.client ?? getClient(),
     query: options.query,

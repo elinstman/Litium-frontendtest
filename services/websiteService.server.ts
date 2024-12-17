@@ -12,7 +12,7 @@ export async function get(contextPath?: string): Promise<Website> {
   const content = await queryServer({
     query: GET_WEBSITE,
     url: contextPath,
-    fetchPolicy: 'cache-first',
+    fetchPolicy: "no-cache",
   });
   const { channel } = content;
   return {
@@ -48,7 +48,7 @@ export const GET_WEBSITE = gql`
         url
         culture {
           code
-        }
+        } 
         website {
           ... on AcceleratorWebsiteWebsite {
             id

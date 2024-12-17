@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client';
+import { BANNER_BLOCK_FRAGMENT } from './banner';
 import { IMAGE_BLOCK_FRAGMENT } from './image';
 import { PRODUCTS_BLOCK_FRAGMENT } from './product';
 import { TEXT_BLOCK_FRAGMENT } from './text';
@@ -22,4 +23,5 @@ export const ALL_BLOCK_TYPES_FRAGMENT = gql`
    ${TEXT_BLOCK_FRAGMENT}
    ${TWO_COLUMNS_FRAGMENT}
    ${IMAGE_BLOCK_FRAGMENT}
+   ${BANNER_BLOCK_FRAGMENT}
 `;

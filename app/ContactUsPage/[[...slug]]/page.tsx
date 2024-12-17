@@ -6,7 +6,7 @@ import { createMetadata } from 'services/metadataService.server';
 
 export default async function Page({ params }: { params: any }) {
   const content = await getContent({ params });
-  console.log('content in landing page', content.blocks.main);
+  console.log('content in contact us page - main ', content.blocks.main);
   return (
     <BlockContainer
       priority
@@ -15,7 +15,6 @@ export default async function Page({ params }: { params: any }) {
     ></BlockContainer>
   );
 }
-
 export async function generateMetadata({
   params,
 }: {
@@ -26,6 +25,7 @@ export async function generateMetadata({
 }
 
 async function getContent({ params }: { params: any }) {
+  console.log('params in contact us page', params);
   return (
     await queryServer({
       query: GET_CONTENT,
@@ -35,11 +35,14 @@ async function getContent({ params }: { params: any }) {
 }
 
 const GET_CONTENT = gql`
-  query GetLandingPage {
+  query GetContactUsPage {
     content {
-      ... on LandingPage {
+      ... on ContactUsPage {
         ...Metadata
         id
+        fields {
+          editor
+        }
         blocks {
           main {
             ...AllBlockTypes
